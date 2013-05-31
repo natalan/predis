@@ -4,11 +4,15 @@ Predis = promise + redis
 Predis is based on [node-redis](https://github.com/mranney/node_redis). Instead invoking callback function after communication with database it immediately returns a [Promise](https://github.com/natalan/Promise) object that will be resolved or rejected later.
 
 Refer to [node-redis](https://github.com/mranney/node_redis) documentation for available commands and arguments.
-Check [Promise](https://github.com/natalan/Promise) code, tests, and poor documentation to get some ideas how you can use it.
+Check [Promise](https://github.com/natalan/Promise) code, tests, and poor documentation to get some ideas on how you can use it.
 
 Usage
 -----
-**createClient** method takes an optional argument with server, port, and password for redis server:
+Install with:
+
+    npm install redis
+
+`createClient` takes an optional argument with server, port, and password for redis server:
 
 ```javascript
 var predis = require("predis");
@@ -18,7 +22,7 @@ var client = predis.createClient({
     password: "secret"
 });
 ```
-If no options provided node-redis will try to connect to 127.0.0.1 on port 6379 (default for redis-server)
+If no options provided `node-redis` will try to connect to 127.0.0.1 on port 6379 (default for redis-server)
 
 Examples
 --------
@@ -69,7 +73,7 @@ client.incr('next:user').then(function(id) {
 
 multi & exec
 -----
-Predis doesn't return a promise after __multi__ and __exec__ commands. You can use this approach instead:
+Predis doesn't return a promise after `multi` and `exec` commands. You can use this approach instead:
 
 ```javascript
 var destroyModel = function(model) {
