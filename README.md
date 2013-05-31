@@ -1,7 +1,7 @@
 Predis = promise + redis
 =======
 
-Predis is based on [node-redis](https://github.com/mranney/node_redis). Instead invoking callback function after communication with database it immediately returns a [Promise](https://github.com/natalan/Promise) object that will be resolved or rejected later.
+Predis is based on [node-redis](https://github.com/mranney/node_redis). Instead invoking callback function after communication with database, it immediately returns a [Promise](https://github.com/natalan/Promise) object that will be resolved or rejected later.
 
 Refer to [node-redis](https://github.com/mranney/node_redis) documentation for available commands and arguments.
 Check [Promise](https://github.com/natalan/Promise) code, tests, and poor documentation to get some ideas on how you can use it.
