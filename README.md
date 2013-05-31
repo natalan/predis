@@ -12,15 +12,16 @@ Install with:
 
     npm install predis
 
+
 `createClient` takes an optional argument with server, port, and password for redis server:
 
 ```javascript
-var predis = require("predis");
-var client = predis.createClient({
-    port: 10229,
-    server: "pub-redis-777.us-east-1-4.2.ec2.garantiadata.com",
-    password: "secret"
-});
+var predis = require("predis"),
+    client = predis.createClient({
+        port: 10229,
+        server: "pub-redis-777.us-east-1-4.2.ec2.garantiadata.com",
+        password: "secret"
+    });
 ```
 If no options provided `node-redis` will try to connect to 127.0.0.1 on port 6379 (default for redis-server)
 
