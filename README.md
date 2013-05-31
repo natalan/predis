@@ -3,11 +3,12 @@ Predis = promise + redis
 
 Predis is based on [node-redis](https://github.com/mranney/node_redis). Instead invoking callback function after communication with database it immediately returns a [Promise](https://github.com/natalan/Promise) object that will be resolved or rejected later.
 
-Refer to [node-redis](https://github.com/mranney/node_redis) documentation for available commands and arguments
+Refer to [node-redis](https://github.com/mranney/node_redis) documentation for available commands and arguments.
+Check [Promise](https://github.com/natalan/Promise) code, tests, and poor documentation to get some ideas how you can use it.
 
 Usage
 -----
-**createClient** method can take optional argument with server, port, and password to redis server:
+**createClient** method takes an optional argument with server, port, and password for redis server:
 
 ```javascript
 var predis = require("predis");
@@ -19,16 +20,14 @@ var client = predis.createClient({
 ```
 If no options provided node-redis will try to connect to 127.0.0.1 on port 6379 (default for redis-server)
 
-Examples (using Underscore.js)
+Examples
 --------
 **Simple get example**
 
 ```javascript
-// get key 'user:123' from Redis and output value to console
 client.get("user:123").then(function(user) {
     console.log(user);
 });
-
 ```
 **Get all keys and their types**
 ```javascript
@@ -41,7 +40,7 @@ client.keys("*").then(function(keys) {
 });
 ```
 
-**Fetch set with pointers with their values**
+**Fetch set with pointers and their values**
 ```javascript
 client.smembers('stooges').then(function(users) {
     // users => ['user:1', 'user:2', 'user:3']
@@ -51,25 +50,26 @@ client.smembers('stooges').then(function(users) {
     })
 });
 ```
-**Store new user and add to 'stooges'**
+**Store new user, add to 'stooges', and list all stooges**
+```javascript
 client.incr('next:user').then(function(id) {
-    return client.set(['user:' + id, 'Andy']).success(function() {
-        alert('Andy stored as user:' + id);
-    }).fail(function(err) {
-        console.error('error occurred', err);
+    return client.set(['user:' + id, 'Andy']).then(function() {
+         return client.sadd(['stooges', 'user:' + id]).success(function() {
+             console.log('done');
+         }).fail(function(err) {
+             console.error('error occurred', err);
+         });
     });
-}).then(function(id) {
-    return client.sadd(['stooges', 'user:' + id]).success(function() {
-        alert('done');
-    }).fail(function(err) {
-        console.error('error occurred', err);
-    });
+}).always(function() {
+    return client.smembers('stooges').then(client.mget).then(function(stooges) {
+        console.log(stooges); // => ['Andrei', 'Dave', 'Sasha', 'Andy']
+    })
 });
-
+```
 
 multi & exec
 -----
-Predis does not return a promise after Multi and exec commands. You can use this approach instead:
+Predis doesn't return a promise after __multi__ and __exec__ commands. You can use this approach instead:
 
 ```javascript
 var destroyModel = function(model) {
@@ -94,5 +94,4 @@ var destroyModel = function(model) {
 destroyModel(someModel).then(function(message) {
     console.log(message);
 });
-
 ```
