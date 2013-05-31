@@ -1,0 +1,5 @@
+/.idea/
+/.idea/scopes/
+/node_modules/
+*.xml
+*.iml
