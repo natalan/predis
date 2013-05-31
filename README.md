@@ -10,7 +10,7 @@ Usage
 -----
 Install with:
 
-    npm install redis
+    npm install predis
 
 `createClient` takes an optional argument with server, port, and password for redis server:
 
