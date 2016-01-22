@@ -1,18 +1,13 @@
 language: node_js
-sudo: false
-env:
-  - CXX=g++-4.8 TRAVIS=true
-addons:
-  apt:
-    sources:
-    - ubuntu-toolchain-r-test
-    packages:
-    - g++-4.8
+sudo: true
 node_js:
   - "0.12"
   - "0.10"
   - "4"
   - "5"
+before_install:
+  - apt-get install redis-server
+  - service redis start
 before_script:
   - npm install -g mocha
 script:
