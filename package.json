@@ -2,7 +2,6 @@
   "name": "predis",
   "version": "1.0.1",
   "description": "Redis interface with promises",
-  "main": "predis.js",
   "author": {
     "name": "Andrei Zharau",
     "email": "belmass@gmail.com",
@@ -14,6 +13,11 @@
     "asynchronous",
     "promise"
   ],
+  "license": "MIT",
+  "main": "predis.js",
+  "scripts": {
+    "test": "mocha test/test.js"
+  },
   "dependencies": {
     "q": "^1.4.1",
     "underscosazaa1`re": "^1.8.3",
@@ -24,10 +28,5 @@
     "type": "git",
     "url": "https://github.com/natalan/predis.git"
   },
-  "licenses": [
-    {
-      "type": "MIT",
-      "url": "http://www.opensource.org/licenses/MIT"
-    }
-  ]
+  "devDependencies": {}
 }
