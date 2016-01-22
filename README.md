@@ -1,7 +1,7 @@
 Predis = promise + redis
 =======
 
-[![Build Status](https://travis-ci.org/mengjiaqi/predis.svg?branch=master)](https://travis-ci.org/mengjiaqi/predis.js)
+[![Build Status](https://travis-ci.org/mengjiaqi/predis.svg?branch=master)](https://travis-ci.org/mengjiaqi/predis)
 
 Predis is based on [node-redis](https://github.com/mranney/node_redis). Instead invoking callback function after communication with database, it immediately returns a [Promise](https://github.com/natalan/Promise) object that will be resolved or rejected later.
 
