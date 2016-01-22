@@ -1,7 +1,7 @@
 var _ = require('underscore'),
-    Promise = require('nok-promise'),
+    q = require('q'),
     redis = require("redis"),
-    commands = require('redis/lib/commands');
+    commands = require('redis-commands');
 
 var _createClient = function(redis_options) {
     var opts = _.extend({
@@ -25,27 +25,27 @@ var _createClient = function(redis_options) {
         });
     }
 
-    commands.forEach(function(command) {
+    commands.list.forEach(function(command) {
         predis[command] = function() {
 
             if (_(exclude).contains(command)) {
                 return redisClient[command].apply(redisClient, arguments);
             } else {
-                var p = new Promise,
+                var defer = new q.defer(),
                     args = Array.prototype.slice.apply(arguments);
 
                 args.push(function(error, result) {
                     if (error) {
                         console.error("Predis :: ERROR! ", error, command, args);
-                        p.reject(error);
+                        defer.reject(error);
                     } else {
-                        p.resolve(result);
+                        defer.resolve(result);
                     }
                 });
 
                 redisClient[command].apply(redisClient, args);
 
-                return p.limited();
+                return defer.promise;
             }
         };
     });
