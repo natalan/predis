@@ -6,8 +6,8 @@ node_js:
   - "4"
   - "5"
 before_install:
-  - apt-get install redis-server
-  - service redis start
+  - sudo apt-get install redis-server
+  - sudo service redis start
 before_script:
   - npm install -g mocha
 script:
