@@ -85,9 +85,7 @@ describe("client", () => {
                         client.set([`user:${id}`, "Andy"]);
                         return id;
                     })
-                    .then((id) => {
-                        return client.sadd("stooges", `user:${id}`);
-                    })
+                    .then((id) => client.sadd("stooges", `user:${id}`))
                     .then(() => client.smembers("stooges").then(client.mget).then((stooges) => {
                         expect(stooges).toEqual(["Andrei", "Dave", "Sasha", "Andy"]);
                         done();
