@@ -1,7 +1,7 @@
 Predis = promise + redis
 =======
 
-[![Build Status](https://travis-ci.org/mengjiaqi/predis.svg?branch=master)](https://travis-ci.org/mengjiaqi/predis)
+[![Build Status](https://travis-ci.org/natalan/predis.svg?branch=master)](https://travis-ci.org/natalan/predis)
 
 Predis is based on [node-redis](https://github.com/natalan/predis). Instead invoking callback function after communication with database, it immediately returns a [Promise](https://github.com/natalan/Promise) object that will be resolved or rejected later.
 
@@ -9,6 +9,7 @@ Refer to [node-redis](https://github.com/mranney/node_redis) documentation for a
 
 Usage
 -----
+Requires Node v8 or above.
 Install with:
 
     npm install predis
