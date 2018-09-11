@@ -1,33 +1,32 @@
 {
-    "name": "predis",
-    "version": "1.0.1",
-    "description": "Redis interface with promises",
-    "main": "predis.js",
-    "author": {
-        "name": "Andrei Zharau",
-        "email": "belmass@gmail.com",
-        "url": "http://www.o2v.net/"
-    },
-    "keywords": [
-        "redis",
-        "deferred",
-        "asynchronous",
-        "promise"
-    ],
-    "dependencies": {
-        "underscore": "*",
-        "nok-promise": "~1.0.0",
-        "redis": "~0.8.3",
-        "hiredis": "~0.1.15"
-    },
-    "repository" : {
-        "type" : "git",
-        "url" : "https://github.com/natalan/predis.git"
-    },
-    "licenses": [
-        {
-            "type": "MIT",
-            "url": "http://www.opensource.org/licenses/MIT"
-        }
-    ]
+  "name": "predis",
+  "version": "1.0.1",
+  "description": "Redis interface with promises",
+  "author": {
+    "name": "Andrei Zharau",
+    "email": "belmass@gmail.com",
+    "url": "http://www.o2v.net/"
+  },
+  "keywords": [
+    "redis",
+    "deferred",
+    "asynchronous",
+    "promise"
+  ],
+  "license": "MIT",
+  "main": "predis.js",
+  "scripts": {
+    "test": "mocha test/test.js"
+  },
+  "dependencies": {
+    "q": "^1.4.1",
+    "underscore": "^1.8.3",
+    "redis": "^2.4.2",
+    "redis-commands": "^1.0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/natalan/predis.git"
+  },
+  "devDependencies": {}
 }
