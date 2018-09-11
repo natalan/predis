@@ -1,14 +1,8 @@
 language: node_js
-sudo: true
 node_js:
-  - "0.12"
-  - "0.10"
-  - "4"
-  - "5"
-before_install:
-  - sudo apt-get install redis-server
-  - sudo redis-server &
-before_script:
-  - npm install -g mocha
+  - "node"
+  - "10"
+  - "9"
+  - "8"
 script:
   - npm test
