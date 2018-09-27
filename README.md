@@ -1,7 +1,7 @@
 Predis = promise + redis
 =======
 
-[![Build Status](https://travis-ci.com/natalan/predis.svg?branch=master)](https://travis-ci.com/natalan/predis)
+[![Build Status](https://travis-ci.com/natalan/predis.svg?branch=master)](https://travis-ci.com/natalan/predis) [![Greenkeeper badge](https://badges.greenkeeper.io/natalan/predis.svg)](https://greenkeeper.io/)
 
 Predis is based on [node-redis](https://github.com/natalan/predis). Instead invoking callback function after communication with database, it immediately returns a [Promise](https://github.com/natalan/Promise) object that will be resolved or rejected later.
 
