@@ -1,6 +1,6 @@
 {
     "name": "predis",
-    "version": "1.1.0",
+    "version": "1.1.1",
     "description": "Redis interface with promises",
     "author": {
         "name": "Andrei Zharau",
@@ -24,12 +24,7 @@
         "test": "npm run lint && npm run jest"
     },
     "dependencies": {
-        "bluebird": "3.5.3",
-        "eslint": "5.15.2",
-        "eslint-config-airbnb-base": "13.1.0",
-        "eslint-plugin-import": "2.14.0",
-        "eslint-plugin-jsx-a11y": "6.1.2",
-        "eslint-plugin-react": "7.12.0",
+        "bluebird": "3.5.4",
         "redis": "2.8.0",
         "redis-commands": "1.4.0"
     },
@@ -38,8 +33,13 @@
         "url": "https://github.com/natalan/predis.git"
     },
     "devDependencies": {
-        "jest": "23.6.0",
-        "jest-cli": "23.6.0",
-        "redis-mock": "0.41.0"
+        "eslint": "5.16.0",
+        "eslint-config-airbnb-base": "13.1.0",
+        "eslint-plugin-import": "2.16.0",
+        "eslint-plugin-jsx-a11y": "6.2.1",
+        "eslint-plugin-react": "7.12.4",
+        "jest": "24.7.1",
+        "jest-cli": "24.7.1",
+        "redis-mock": "0.43.0"
     }
 }
