@@ -40,6 +40,6 @@
         "eslint-plugin-react": "7.13.0",
         "jest": "24.7.1",
         "jest-cli": "24.7.1",
-        "redis-mock": "0.43.0"
+        "redis-mock": "0.44.0"
     }
 }
