@@ -1,6 +1,6 @@
 {
     "name": "predis",
-    "version": "1.1.2",
+    "version": "1.1.3",
     "description": "Redis interface with promises",
     "author": {
         "name": "Andrei Zharau",
@@ -33,9 +33,9 @@
         "url": "https://github.com/natalan/predis.git"
     },
     "devDependencies": {
-        "eslint": "6.7.1",
+        "eslint": "6.8.0",
         "eslint-config-airbnb-base": "14.0.0",
-        "eslint-plugin-import": "2.19.0",
+        "eslint-plugin-import": "2.19.1",
         "eslint-plugin-jsx-a11y": "6.2.3",
         "eslint-plugin-react": "7.17.0",
         "jest": "24.9.0",
