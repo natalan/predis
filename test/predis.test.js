@@ -15,8 +15,7 @@ describe("client", () => {
         });
         client.quit();
     });
-    
-    
+
     it("Check GET/SET operations", (done) => {
         client.set("key", "value").then((result) => {
             expect(result).toEqual("OK");
